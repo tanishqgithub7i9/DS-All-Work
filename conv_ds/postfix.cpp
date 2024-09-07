@@ -1,35 +1,25 @@
-#include"conversion.cpp"
-
-class PostFix : public Conversion
-{
-    private:
-        string strPost;
-    
-    public:
-        PostFix(string str , int steps = 0):Conversion(str , steps){}
-        void postFix();
-        friend ostream& operator<<(ostream &cout , PostFix &obj);
-
-};
+#include"postfix.h"
+#include<stack>
+#include<iostream>
 
 void PostFix::postFix()
 {
-    stack<char> s;
-    string result;
+    std::stack<char> s;
+    std::string result;
     int increment = 1;
 
     for (auto &ele : this->str)
     {
         // if user wants the instructions.
         if (this->steps)
-            cout << increment << " ";
+            std::cout << increment << " ";
 
         // isalnum function return me. if it see any alpha numeric number '0' to '9' or 'a' to 'z' or 'A' to 'Z' then returns 1.
         if (isalnum(ele))
         {
             result += ele;
             if (this->steps)
-                cout << "Element is written: " << result << " ";
+                std::cout << "Element is written: " << result << " ";
         }
         else if (ele == '(')
         {
@@ -45,7 +35,7 @@ void PostFix::postFix()
                 s.pop();
                 if (this->steps)
                 {
-                    cout << "Element is written in result: " << result << " ";
+                    std::cout << "Element is written in result: " << result << " ";
                     Conversion::elementPopped(s);
                 }
             }
@@ -62,7 +52,7 @@ void PostFix::postFix()
                 s.pop();
                 if (this->steps)
                 {
-                    cout << "Element written into result: " << result << " ";
+                    std::cout << "Element written into result: " << result << " ";
                     Conversion::elementPopped(s);
                 }
             }
@@ -73,14 +63,14 @@ void PostFix::postFix()
         }
         increment++;
         if (this->steps)
-            cout << endl;
+            std::cout << std::endl;
     }
 
     strPost = result;
 }
 
-ostream& operator<<(ostream& cout , PostFix& obj)
+std::ostream& operator<<(std::ostream& cout , PostFix& obj)
 {
-    cout<<endl<<"In-Fix: "<<obj.str;
-    cout<<endl<<"Post-Fix: "<<obj.strPost;
+    std::cout<<std::endl<<"In-Fix: "<<obj.str;
+    std::cout<<std::endl<<"Post-Fix: "<<obj.strPost;
 }
