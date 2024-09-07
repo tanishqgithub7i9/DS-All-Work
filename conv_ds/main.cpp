@@ -1,8 +1,10 @@
-#include"postfix.cpp"
+#include"postfix.h"
+#include<iostream>
+using namespace std;
 
 int main()
 {
-    PostFix obj = PostFix("(a+b)*(a-b)",1);
+    PostFix obj("(a+b)*(a-b)", 1);
     obj.postFix();
 
     cout<<obj;
