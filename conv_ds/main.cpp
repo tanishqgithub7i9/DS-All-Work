@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    PostFix obj("(a+b)*(a-b)", 1);
+    PostFix obj("((a+b)^c-(d*e)/f)", 1);
     obj.postFix();
 
     cout<<obj;
