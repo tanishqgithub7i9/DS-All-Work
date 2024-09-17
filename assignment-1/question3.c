@@ -7,7 +7,7 @@ int isDescending(int* , int);
 
 int main()
 {
-    int array[5] = {7,6,5,4,3};
+    int array[5] = {1,2,3,4,5};
     int size = 5;
 
     int result = isAscending(array , size);

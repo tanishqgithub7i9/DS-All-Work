@@ -6,7 +6,8 @@ void printArray(int [][4] , int row , int col);
 
 int main()
 {
-    int array[4][4] = {{1,2,3,4},{4,3,2,1},{5,6,7,8},{8,7,6,5}};
+    int array[4][4] = {{1,2,3,4},
+                {4,3,2,1},{5,6,7,8},{8,7,6,5}};
 
     transpose(array , 4, 4);
 
