@@ -1,7 +1,9 @@
 // 12. WAP to search an element in an array using binary search.
 
 #include<stdio.h>
-int binarySearch(int[][4] , int row , int col);
+#include<conio.h>
+
+int binarySearch(int[][4] , int, int , int);
 int main()
 {
     int array[4][4] =   {
@@ -14,7 +16,7 @@ int main()
     
 }
 
-int binarySearch(int array[][4] , int row , int col)
+int binarySearch(int array[][4] , int row , int col , int target) 
 {
     int left = 0;
     int right = row * col - 1;
